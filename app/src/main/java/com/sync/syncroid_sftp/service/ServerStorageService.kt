@@ -23,11 +23,12 @@ class ServerStorageService(
         var session: Session? = null
 
         return try {
-            // Utilisation de l'instance injectée jsch, pas de nouvelle instanciation
+
             session = jsch.getSession(serverStorage.username, serverStorage.host, serverStorage.port)
             session.setPassword(serverStorage.password)
 
             val config = java.util.Properties()
+            // TODO put yes
             config["StrictHostKeyChecking"] = "no"
             session.setConfig(config)
 
@@ -63,6 +64,7 @@ class ServerStorageService(
             session.setPassword(server.password)
 
             val config = java.util.Properties()
+            // TODO put yes
             config["StrictHostKeyChecking"] = "no"
             session.setConfig(config)
 
