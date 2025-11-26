@@ -14,16 +14,21 @@ Les mots de passe sont encryptés avec AndroidKeyStore, ce qui garantit que les 
 
 ## Envie de contribuer ?
 
-Fonce, fais-toi plaisir si tu veux. Pas de règles strictes ici.
+N'hésitez pas, rendez-vous utile si vous le souhaitez. Il n'y a pas de règles strictes, mais veuillez d'abord consulter les `issues`, vous y trouverez ce qui doit être fait.
+
+### Règles
+
+- Si, dans un paquet, vous avez deux classes portant le même nom ou ayant des responsabilités similaires (par exemple `CatScream` et `CatMovement`), créez un nouveau sous-paquet à l'intérieur de ce paquet pour les séparer (ce serait par exemple un sous-paquet `CatBehaviour`).
+- Les classes qui contiennent une logique métier ou une logique de service doivent être testées avant d'être poussées, même s'il n'y a pas de couches de domaine claires ici.
+- Ajoute des commentaires JavaDoc. Avec Gemini intégré, c’est devenu facile de nos jours… mais si Gemini génère 300 lignes pour un simple getter, n’hésite pas à nettoyer et ajuster un peu le bazar.
 
 ## À faire
 
 - Ajouter l'authentification par empreinte digitale
-- Refactorer les classes UI qui sont désordonnées
-- Créer un service de synchronisation qui upload automatiquement les fichiers sur un Wi-Fi spécifique à une heure programmée
-- Faire en sorte que le service vérifie la connexion au serveur avant de lancer, et qu'il réessaie si hors ligne
+- Refactoriser les classes UI désordonnées
+- Créer un service de synchronisation qui télécharge automatiquement les fichiers selon un calendrier défini, en vérifiant la connexion au serveur avant de démarrer et en réessayant plus tard si la connexion est hors ligne
 
-Comme il s'agit de ma première expérience avec Kotlin et Android, le code est assez désordonné et mal organisé à certains endroits. Je dois le décomposer en plusieurs parties plus petites, et j'ai déjà commencé à le faire. N'hésitez pas à l'améliorer, je suis ouvert à tous les commentaires !
+Comme il s'agit de ma première expérience avec Kotlin et Android, le code est assez désordonné et mal organisé à certains endroits. Je dois décomposer le code en plusieurs parties plus petites dans plusieurs domaines, et j'ai déjà commencé à le faire. N'hésitez pas à l'améliorer, je suis ouvert à tous les commentaires !
 
 ---
 

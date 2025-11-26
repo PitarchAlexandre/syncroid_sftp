@@ -14,14 +14,19 @@ Passwords are encrypted with AndroidKeyStore, so sensitive data stays safe on th
 
 ## Want to contribute?
 
-Go ahead, make yourself useful if you want. No big rules here.
+Go ahead, make yourself useful if you want. No big rules here, but please take a look at the issues first, that’s where you’ll find what needs to be done.
 
-## To Do
+### Rules
+
+- If within a package you have two classes with the same name or similar responsibilities (for example `CatScream` and `CatMovement`), create a new sub-package inside that package to separate them (it would be a `CatBehaviour` sub-package for example).
+- Classes that contain business logic or service logic must have tests before pushing, even if there are no clear domain layers here.
+- Add JavaDoc comments. With Gemini integrated, this is easy nowadays... but if Gemini generates 300 lines for a simple getter, just clean it up and adjust as needed.
+
+## To do
 
 - Add fingerprint authentication
 - Refactor messy UI classes
-- Create a sync service that uploads files automatically on specific Wi-Fi and schedule
-- Make the sync check server connection before starting, retry if offline
+- Create a sync service that uploads files automatically on a schedule, checking the server connection before starting and retrying later if offline
 
 Since this is my first experience with Kotlin and Android, the code is quite messy and unorganized in some places. I need to break down the code into smaller parts in several areas, and I've already started doing that. Feel free to improve it, I’m open to any feedback!
 
