@@ -2,7 +2,7 @@ name: Deploy To Google Play
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   test:
@@ -38,6 +38,9 @@ jobs:
           distribution: "temurin"
           java-version: 17
           cache: 'gradle'
+
+      - name: Grant execute permissions for gradlew
+        run: chmod +x ./gradlew
 
       - name: Version Bump
         uses: chkfung/android-version-actions@v1.2.3
