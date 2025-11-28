@@ -50,6 +50,9 @@ jobs:
       - name: Assemble Release Bundle
         run: ./gradlew bundleRelease
 
+      - name: Assemble Release APK
+        run: ./gradlew assembleRelease
+
       - name: Sign Release
         uses: r0adkll/sign-android-release@v1
         with:
